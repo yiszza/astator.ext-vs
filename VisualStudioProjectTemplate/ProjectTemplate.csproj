@@ -6,7 +6,7 @@
     <SupportedOSPlatformVersion>26.0</SupportedOSPlatformVersion>
   </PropertyGroup>
   <ItemGroup>
-    <PackageReference Include="Astator" Version="1.0.0-preview1" />
+    <PackageReference Include="Astator" Version="1.0.1" />
   </ItemGroup>
   <ProjectExtensions>
     <IsObfuscate>true</IsObfuscate>
