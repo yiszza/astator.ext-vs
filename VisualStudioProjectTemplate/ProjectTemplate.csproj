@@ -11,7 +11,9 @@
   <ProjectExtensions>
     <IsObfuscate>true</IsObfuscate>
     <Label>$safeprojectname$</Label>
+    <Author>unknown</Author>
     <PackageName>com.script.$safeprojectname$</PackageName>
     <Version>1.0.0</Version>
+    <Description>在这里填写关于脚本的描述</Description>
   </ProjectExtensions>
 </Project>

@@ -89,29 +89,17 @@ public static class PackDataExtension
     internal static byte[] ToHeader(this DebugType type)
     {
         var i32 = (int)type;
-        var bytes = new byte[8];
-        bytes[0] = (byte)(i32 >> 24);
-        bytes[1] = (byte)(i32 >> 16);
-        bytes[2] = (byte)(i32 >> 8);
-        bytes[3] = (byte)i32;
-        return bytes;
+        return BitConverter.GetBytes(i32);
     }
 
-    public static byte[] ToBytes(this int i32)
+    public static int ToInt32(this byte[] bytes)
     {
-        var bytes = new byte[4];
-        bytes[0] = (byte)(i32 >> 24);
-        bytes[1] = (byte)(i32 >> 16);
-        bytes[2] = (byte)(i32 >> 8);
-        bytes[3] = (byte)i32;
-        return bytes;
+        return BitConverter.ToInt32(bytes, 0);
     }
 
-    public static int ToInt32(this byte[] value, int offset = 0)
+    public static byte[] ToBytes(this int number)
     {
-        int result;
-        result = value[offset] << 24 | value[offset + 1] << 16 | value[offset + 2] << 8 | value[offset + 3];
-        return result;
+        return BitConverter.GetBytes(number);
     }
 
     public static void WriteInt32(this Stream stream, int i32)
